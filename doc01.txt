@@ -1,2 +1,0 @@
-nova alteração
-Alteração do arquivo doc01 apos o stash
