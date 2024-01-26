@@ -9,8 +9,12 @@ Vagrant.configure("2") do |config|
         	        vb.name = "controle"
 	                vb.memory = "11124"
 	                vb.cpus = 12
-        	end
-          controle.vm.provision "shell", inline:"apt -y install git"
+        	end          
+          #controle.vm.provision "shell", inline:"apt -y install git"
+          controle.vm.provision "ansible_local" do |ansible|
+            ansible.playbook = "playbook.yml"
+            ansible.install_mode = "pip"
+          end
 	end
 
   config.vm.define "web" do |web|
